@@ -163,11 +163,20 @@ With:
 
 +Q. Command Injection won't work.
 
--A. Apache may not have high enough priviledges to run commands on the web server. If you are running DVWA under Linux make sure you are logged in as root. Under Windows log in as Administrator.
+-A. Apache may not have high enough privileges to run commands on the web server. If you are running DVWA under Linux make sure you are logged in as root. Under Windows log in as Administrator.
 
 +Q. My XSS payload won't run in IE.
 
 -A. If you're running IE8 or above, IE actively filters any XSS. To disable the filter you can do so by setting the HTTP header `X-XSS-Protection: 0` or disable it from internet options. There may also be ways to bypass the filter.
+
++Q. Why does it say my config.inc.php is missing? 
+
+Please ensure config.inc.php exists and not config.inc.php.dist. If you're on Windows, run `copy C:\directory where DVWA is in\config\config.inc.php.dist C:\directorywhereDVWAisin\config\config.inc.php` to verify. Change it as needed per your environment, of course. This change was made to make sure people actually set their system settings in config.inc.php in lieu of just copying the config over and complaining when it doesn't work.
+
+
++Q. Why does my config folder list as not writable in the setup page?
+
+-A. There are a variety of issues Feel free to allow all users/groups to read/write to the config folder as this isn't a secure service anyways.
 
 - - -
 
